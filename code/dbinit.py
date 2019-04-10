@@ -28,8 +28,8 @@ show_all_rows(cur.fetchall())
 cur.execute('''CREATE TABLE MOMENTS
     (ID integer, TITLE text, ACCOUNT text, MOMENT text, GENRE text, APPLAUSE integer)''')
 # init moments
-cur.execute("INSERT INTO MOMENTS VALUES (1, 'Sed Quis Purus', 'sample_writer_1', 'Sed quis purus non tortor auctor molestie maximus a ante. Vestibulum consectetur ligula risus…', 'other', 0)")
-cur.execute("INSERT INTO MOMENTS VALUES (2, 'Lorem Ipsum', 'sample_writer_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua…', 'other', 0)")
+cur.execute("INSERT INTO MOMENTS VALUES (1, 'Sed Quis Purus', 'sample_writer_1', 'Sed quis purus non tortor auctor molestie maximus a ante. Vestibulum consectetur ligula risus…', 1)")
+cur.execute("INSERT INTO MOMENTS VALUES (2, 'Lorem Ipsum', 'sample_writer_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua…', 1)")
 conn.commit()
 # search moments
 cur.execute("SELECT * FROM MOMENTS")
@@ -51,6 +51,7 @@ cur.execute('''CREATE TABLE BOOKMARKS
     (ACCOUNT text, ID integer)''')
 # init bookmarks
 cur.execute("INSERT INTO BOOKMARKS VALUES ('sample_reader_1', 2)")
+cur.execute("INSERT INTO BOOKMARKS VALUES ('sample_reader_2', 1)")
 conn.commit()
 cur.execute("SELECT * FROM BOOKMARKS")
 show_all_rows(cur.fetchall())
@@ -60,6 +61,7 @@ cur.execute('''CREATE TABLE APPLAUSE
     (ACCOUNT text, ID integer)''')
 # init applause
 cur.execute("INSERT INTO APPLAUSE VALUES ('sample_reader_1', 2)")
+cur.execute("INSERT INTO APPLAUSE VALUES ('sample_reader_2', 1)")
 conn.commit()
 cur.execute("SELECT * FROM APPLAUSE")
 show_all_rows(cur.fetchall())
