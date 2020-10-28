@@ -17,8 +17,8 @@ def show_all_rows(all_rows):
 cur.execute('''CREATE TABLE WRITERS
     (ACCOUNT text, NAME text, PASSWORD text, BIRTHYEAR integer, PROFILE text)''')
 # init writers
-cur.execute("INSERT INTO WRITERS VALUES ('sample_writer_1', 'Sample Writer', 'samplewriterpassword', 2000, 'Just another Moments maker')")
-cur.execute("INSERT INTO WRITERS VALUES ('sample_writer_2', 'Sample Writer', 'samplewriterpassword', 2000, 'Just another Moments maker')")
+cur.execute("INSERT INTO WRITERS VALUES ('sample_writer_1', 'Sample Writer', 'samplewriterpassword1', 2000, 'Just another Moments maker')")
+cur.execute("INSERT INTO WRITERS VALUES ('sample_writer_2', 'Sample Writer', 'samplewriterpassword2', 2000, 'Just another Moments maker')")
 conn.commit()
 # search writers
 cur.execute("SELECT * FROM WRITERS")
@@ -39,8 +39,8 @@ show_all_rows(cur.fetchall())
 cur.execute('''CREATE TABLE READERS
     (ACCOUNT text, NAME text, PASSWORD text, BIRTHYEAR integer)''')
 # init readers
-cur.execute("INSERT INTO READERS VALUES ('sample_reader_1', 'Sample Reader', 'samplereaderpassword', 2000)")
-cur.execute("INSERT INTO READERS VALUES ('sample_reader_2', 'Sample Reader', 'samplereaderpassword', 2000)")
+cur.execute("INSERT INTO READERS VALUES ('sample_reader_1', 'Sample Reader', 'samplereaderpassword1', 2000)")
+cur.execute("INSERT INTO READERS VALUES ('sample_reader_2', 'Sample Reader', 'samplereaderpassword2', 2000)")
 conn.commit()
 # search readers
 cur.execute("SELECT * FROM READERS")
